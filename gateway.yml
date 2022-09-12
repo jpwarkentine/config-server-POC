@@ -5,7 +5,7 @@ spring:
     gateway:
       routes:
         - id: kanoogi_route
-          uri: https://kanoogi.com/
+          uri: google.com
           predicates :
           - Path=/kanoogi
         # - id: insta_route
