@@ -8,6 +8,8 @@ spring:
           uri: https://reddit.com/top
           predicates :
           - Path=/reddit
+          filters:
+          - RewritePath=/reddit
         # - id: insta_route
         #   uri: ${rewrite.backend.uri:https://instagram.com}
         #   predicates: 
