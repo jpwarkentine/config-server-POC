@@ -5,11 +5,11 @@ spring:
     gateway:
       routes:
         - id: reddit_route
-          uri: https://reddit.com/top
+          uri: https://reddit.com/
           predicates :
           - Path=/reddit
           filters:
-          - RewritePath=/reddit
+          - RewritePath=/top
         # - id: insta_route
         #   uri: ${rewrite.backend.uri:https://instagram.com}
         #   predicates: 
