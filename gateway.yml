@@ -4,14 +4,16 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: test_route
-          uri: https://reddit.com
+        - id: kanoogi_route
+          uri: https://main.kanoogi.com/
           predicates :
-          - Path=/test123
-        - id: another_route
-          uri: https://reddit.cm
-          predicates :
-          - Path=/another
+          - Path=/kanoogi
+        - id: insta_route
+          uri: ${rewrite.backend.uri:https://instagram.com}
+          predicates: 
+          - Path=/instagram
+          filters:
+          - RewritePath=/instagram/christaylorpottery
 # "*" exposure enables actuator access, eg localhost:xxxx/actuator/gateway/routes
 # especially important in order to expose the /refresh actuator endpoint
 management:
