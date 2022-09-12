@@ -9,7 +9,7 @@ spring:
           predicates :
           - Path=/reddit
           filters:
-          - RewritePath=/top
+          - RewritePath=reddit/top
         # - id: insta_route
         #   uri: ${rewrite.backend.uri:https://instagram.com}
         #   predicates: 
