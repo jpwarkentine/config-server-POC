@@ -7,7 +7,7 @@ spring:
         - id: reddit_route
           uri: https://reddit.com/
           predicates :
-          - Path=/reddit
+          - Path=/top
           # filters:
           # - RewritePath=reddit/top
         # - id: insta_route
