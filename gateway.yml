@@ -1,16 +1,18 @@
 server:
   port: 9090
-spring:  
+spring:
   cloud:
     gateway:
       routes:
         - id: reddit_route
           uri: https://reddit.com/
-          predicates :
-          - Path=/top
+          predicates:
+            - Path=/reddit
+          filters:
+            - RewritePath=/top
         # - id: insta_route
         #   uri: ${rewrite.backend.uri:https://instagram.com}
-        #   predicates: 
+        #   predicates:
         #   - Path=/instagram/**
         #   filters:
         #   - RewritePath=/instagram/(?<username>.*),/$\{username}
