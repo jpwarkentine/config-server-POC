@@ -6,8 +6,10 @@ spring:
       routes:
         - id: komo_route
           predicates:
-            - Path=/news
-          uri: https://komonews.com/
+            - Path=/news/**
+          uri: ${rewrite.backend.uri:http://komonews.com}
+          filters:
+            - RewritePath=(?<segment>.*),$\{segment}
         # - id: insta_route
         #   uri: ${rewrite.backend.uri:https://instagram.com}
         #   predicates:
