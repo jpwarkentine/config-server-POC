@@ -6,7 +6,7 @@ spring:
       routes:
         - id: komo_route
           predicates:
-            - Path=/komo
+            - Path=/weather
           uri: https://komonews.com/
         # - id: insta_route
         #   uri: ${rewrite.backend.uri:https://instagram.com}
