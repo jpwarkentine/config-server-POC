@@ -4,10 +4,10 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: guides
+        - id: komo_route
           predicates:
-            - Path=/guides
-          uri: https://spring.io
+            - Path=/komo
+          uri: https://komonews.com/
         # - id: insta_route
         #   uri: ${rewrite.backend.uri:https://instagram.com}
         #   predicates:
