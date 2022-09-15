@@ -4,10 +4,10 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: reddit_route
+        - id: guides
           predicates:
-            - Path=/reddit
-          uri: https://reddit.com
+            - Path=/guides
+          uri: https://spring.io
         # - id: insta_route
         #   uri: ${rewrite.backend.uri:https://instagram.com}
         #   predicates:
