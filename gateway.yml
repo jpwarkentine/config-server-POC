@@ -4,10 +4,12 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: komo_route
+        - id: sinclair_route
           predicates:
-            - Path=/
-          uri: https://reddit.com
+            - Path=/sinclair/**
+          uri: ${rewrite.backend.uri:https://sinclairdigital.com/}
+          filters:
+            - RewritePath=/sinclair(?<segment>/?.*),/$\{segment}
         # - id: insta_route
         #   uri: ${rewrite.backend.uri:https://instagram.com}
         #   predicates:
